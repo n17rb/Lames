@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة لميس 🫦</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; background-color: #fff; margin: 0; padding: 20px; overflow: hidden; }
+        .container { max-width: 400px; margin: auto; }
+        img { width: 100%; border-radius: 15px; margin-bottom: 20px; display: none; }
+        .active { display: block; }
+        button { background: #ff4d6d; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 25px; cursor: pointer; transition: 0.3s; }
+        #no-btn { background: #555; position: absolute; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="game-box">
+    <img src="lamis_1.png.jpg" id="img-1" class="active">
+    <img src="lamis_2.png.PNG" id="img-2">
+    <img src="lamis_3.png.PNG" id="img-3">
+    <img src="lamis_4.png.PNG" id="img-4">
+    <img src="lamis_5.png.PNG" id="img-5">
+    <img src="lamis_6.png.JPG" id="img-6">
+    <img src="lamis_7.png.JPG" id="img-7">
+    <img src="lamis_8.png.PNG" id="img-8">
+    <img src="lamis_9.png.GIF" id="img-9">
+    <img src="yazan_bite.png.JPG" id="img-yazan">
+
+    <h2 id="text">أهلاً لولو! جاهزة للمفاجأة؟</h2>
+    <div id="btns">
+        <button onclick="nextStep(1)" id="main-btn">أكيد جاهزة! 😍</button>
+    </div>
+</div>
+
+<script>
+    let step = 1;
+    function nextStep(s) {
+        document.querySelectorAll('img').forEach(i => i.classList.remove('active'));
+        const mainBtn = document.getElementById('main-btn');
+        const text = document.getElementById('text');
+
+        if (s === 1) {
+            document.getElementById('img-2').classList.add('active');
+            text.innerText = "أكثر إشي بضحكك بالحياة؟";
+            mainBtn.innerText = "ههههه كمل";
+            step = 2;
+        } else if (s === 2) {
+            document.getElementById('img-3').classList.add('active');
+            text.innerText = "بطنك بوجعك هسا؟ 😂";
+            mainBtn.innerText = "آخ يا بطني كمل";
+            step = 3;
+        } else if (s === 3) {
+            document.getElementById('img-4').classList.add('active');
+            text.innerText = "شو لابسة هسا؟ 😉";
+            mainBtn.innerText = "ممم كمل";
+            step = 4;
+        } else if (s === 4) {
+            document.getElementById('img-yazan').classList.add('active');
+            text.innerText = "أوفففف لولو 🫦";
+            mainBtn.innerText = "يزن بس! كمل";
+            step = 5;
+        } else if (s === 5) {
+            document.getElementById('img-5').classList.add('active');
+            text.innerText = "رادار التوثيق شغال 📸";
+            mainBtn.innerText = "يا ويلي كمل";
+            step = 6;
+        } else if (s === 6) {
+            document.getElementById('img-8').classList.add('active');
+            text.innerText = "بتحبي يزن؟";
+            mainBtn.onclick = () => nextStep(7);
+            step = 7;
+        } else if (s === 7) {
+            document.getElementById('img-6').classList.add('active');
+            text.innerText = "بعرف إنك بتموتي فيني! بحبك ❤️";
+            mainBtn.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
